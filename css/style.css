@@ -1,0 +1,614 @@
+/* 1.GENERAL STYLE */
+@font-face {
+  font-family: 'Bahnschrift fallback';
+  src: url('bahnschrift.ttf');
+}
+
+html {
+  box-sizing: border-box;
+  background-color: #040408;
+  font-family: 'Bahnschrift fallback', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  display: none;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+h3 {
+  font-weight: 500;
+  color: #9A9A9A;
+  margin-bottom: 0.25rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem
+}
+
+li {
+  display: inline;
+}
+
+/* 2.HEADER */
+nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: hsl(240, 33%, 2%, 0.9);
+  border-bottom: 1px solid #192332;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}  
+
+nav div {
+  flex-grow: 1;
+  max-width: max-content;
+  display: flex;
+  justify-content: center;
+}
+
+nav div a {
+  margin: 0 2rem;
+}
+
+nav a {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 100ms ease-in;
+}
+
+nav a:hover {
+  color: #5998D0;
+}
+
+svg {
+  fill: #FFFFFF;
+  transition: fill 150ms ease-in;
+  width: 1.5rem;
+  height: auto;
+  margin: 0.5rem;
+}
+
+svg:hover {
+  fill: #5998D0;
+}
+
+/* ANIMATIONS */
+@keyframes slide-in-top{0%{transform:translateY(-1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.slide-in-top{animation:slide-in-top 600ms cubic-bezier(.25,.46,.45,.94) both}
+
+@keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.slide-in-bottom{animation:slide-in-bottom 600ms cubic-bezier(.25,.46,.45,.94) both}
+
+@keyframes rotate-in-center{0%{transform:rotate(-360deg);opacity:0}100%{transform:rotate(0);opacity:1}}
+.rotate-in-center{animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both}
+
+/* LOGO */
+.logo {
+  background-image: url("../img/bg_reconst_1920px.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: scroll;
+  padding-top: 4rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* DISABLE FULL PAGE LOGO ON SMALL DEVICES*/
+@media only screen and (max-width: 768px), (max-height: 768px) {
+  .logo {
+    height: auto;
+    padding-bottom: 5rem;
+  }
+  .logo figure {
+    padding-top: 5rem;
+  }
+}
+
+.logo figure {
+  width: 45%;
+  margin: 0;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* GO TO TOP (ARROW) */
+.arrow {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background-color: #5998D0;
+}
+.arrow svg {
+  width: 1.25rem;
+  fill: #FFFFFF;
+  margin: 0.25rem;
+}
+.arrow svg:hover {
+  animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both;
+}
+
+/* MENU ICON */
+.menu {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  cursor: pointer;
+  top: 2rem;
+  right: 2rem;
+  background-color: #5998D0;
+}
+.menu svg {
+  width: 2rem;
+  fill: #FFFFFF;
+  margin: 0.25rem;
+}
+.menu svg:hover {
+  animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both;
+}
+
+/* 3.MAIN */
+/* VIDEO 
+visit: https://www.benmarshall.me/responsive-iframes/
+--------------------------------*/
+#video {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  width: 50%;
+  max-width: 1024px;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.youtube {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 0;
+  left: 0;
+  top: 0;
+}
+
+.video-button {
+  display: inline-block;
+  width: 50%;
+  max-width: 1024px;
+  color: #FFFFFF;
+  padding: 1rem 1rem;
+  background-color: #111628;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: all 250ms ease-out;
+}
+
+.video-button:hover {
+  background-color: #5998D0;
+}
+
+#video h3 {
+  display: none;
+}
+
+/* ABOUT */
+#bio {
+  /*background-image: url("");*/
+  background-color: #FFFFFF;
+  background-size: contain;
+  color: #040408;
+  padding-top: 4rem;
+}
+
+#bio article, .press {
+  width: 50%;
+  max-width: 1024px;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+
+/* cycler */
+/*#cycler {
+  position:relative;
+  overflow: hidden;
+  padding-top: 66%;
+  margin: 0;
+}
+#cycler img {
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index:1;
+  width: 100%;
+  margin: 0;
+}
+#cycler img.active {
+  z-index:3;
+}*/
+/* end cycler */
+
+p.justify {
+  text-align: justify;
+  margin: 2rem 2rem 1.5rem 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+article p.justify {
+    text-align: justify;
+    margin: 1rem;
+  }
+}
+
+p.center {
+  text-align: center;
+  margin: 0;
+}
+
+/* MUSIC 
+visit: https://www.benmarshall.me/responsive-iframes/
+--------------------------------*/
+#music {
+  padding-top: 4rem;
+  background-image: url("../img/bg_reconst_1920px.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: scroll;
+  justify-content: center;
+  height: auto;
+}
+
+.grid {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  padding-top: 0rem;
+}
+  
+.grid h3 {
+  color: white;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.bandcamp {
+  width: 400px;
+  margin: 0 3rem 0 0rem;
+}
+
+.bandcamp div{
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+}
+
+.bandcamp iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 0;
+  left: 0;
+  top: 0;
+}
+
+.stream {
+  margin: 0 0 1rem 0;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.stream div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stream a {
+  width: 190px ;
+  color: #FFFFFF;
+  padding: 1rem 1rem;
+  margin: 0.5rem 0.5rem 0 0;
+  background-color: #111628;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: all 250ms ease-out;
+}
+
+.stream a:hover {
+  background-color: #5998D0;
+}
+
+/*.press {
+  width: 62%;
+  max-width: 1024px;
+  margin: auto;
+  padding-bottom: 5rem;
+}*/
+
+.pressname {
+  font-weight: 600;
+  color: #A3C6E6;
+  display: block;
+  text-align: center;
+}
+
+/*@media only screen and (max-width: 480px) {
+p.justify {
+    text-align: justify;
+    margin: 1rem;
+  }
+}*/
+
+p.center {
+  text-align: center;
+  margin: 2rem 2rem 1.5rem 2rem;
+}
+
+/* SHOWS */
+#tour {
+  background-color: #FFFFFF;
+  color: #040408;
+  padding-top: 4rem;
+}
+
+.songkick {
+  width: 50%;
+  max-width: 1024px;
+  margin: auto;
+  padding-bottom: 4.5rem;
+  border-top: 1px solid #192332;
+}
+
+/* 4.FOOTER */
+footer {
+  /*background-image: url("");*/
+  background-color: #000000;
+  background-size: contain;
+  padding-top: 4rem;
+}
+
+.no-marginh2 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: #A3C6E6;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.contact {
+  margin-bottom: 3rem;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: color 150ms ease-in;
+}
+
+.contact a:hover {
+  color: #5998D0;
+}
+
+.imglabels {
+  max-width: 160px;
+  height: auto;
+}
+
+.imgpartners {
+  max-width: 240px;
+  height: auto;
+}
+
+.pro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pro a {
+  width: 170px ;
+  color: #FFFFFF;
+  padding: 1rem 1rem;
+  margin: 0.5rem 0.25rem 0 0.25rem;
+  background-color: #111628;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.pro a:hover {
+  background-color: #5998D0;
+  color: #FFFFFF;
+}
+
+.pro img {
+  vertical-align: text-top;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.credits p {
+  color: #9A9A9A;
+  margin: 0 0.8rem;
+}
+
+.credits a {
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: color 150ms ease-in;
+}
+
+.credits a:hover {
+  color: #5998D0;
+}
+
+/* 5. MEDIA QUERIES */
+@media only screen and (min-width: 2000px) {
+  html {
+    font-size: 20px;
+  } 
+  .stream {
+    width: 700px;
+  }
+  .stream a {
+    width: 220px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .logo figure {
+    width: 50%;
+  }
+  .container, .video-button, #bio article, .press, .songkick {
+    width: 55%;
+  }
+  .bandcamp {
+    width: 350px;
+  }
+  .stream {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 17px;
+  } 
+  .logo figure {
+    width: 55%;
+  }
+  .container, .video-button, #bio article, .press, .songkick {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 900px) { 
+  html {
+    font-size: 16px;
+  }
+  .logo figure {
+    width: 60%;
+  }
+  .container, .video-button, #bio article, .press, .songkick {
+    width: 70%;
+  }
+  .grid {
+    flex-direction: column;
+  }
+  .bandcamp {
+    margin: 0;
+  }
+  .stream {
+    align-items: center;
+  }
+  .stream div {
+    justify-content: center;
+  }
+  .stream a {
+    margin: 0.5rem 0.25rem 0 0.25rem;
+  }
+}
+
+@media only screen and (max-width: 600px) { 
+  html {
+    font-size: 15px;
+  }
+  header ul {
+    display: none;
+  }
+  nav div a {
+    margin: 0 1rem;
+  }
+  .logo figure {
+    width: 65%;
+  }
+  .container, .video-button, #bio article, .press, .songkick {
+    width: 80%;
+  }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 480px) { 
+  .container, .video-button, #bio article, .press, .songkick {
+    width: 90%;
+  }
+  .grid {
+    width: 95%;
+  }
+  .bandcamp {
+    width: 300px;
+  }
+  .stream {
+    width: 300px;
+  }
+  .menu {
+    top: 1rem;
+    right: 1rem;
+  }
+  .pressname {
+    text-align: end;
+  }
+}
+
+secondary {
+  color: #606060;
+}
+
+.histo {
+    color: #111628;
+    text-decoration: none;
+}
+.histo:hover {
+    color: #192332;
+}
