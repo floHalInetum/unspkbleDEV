@@ -59,7 +59,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-}  
+}
 
 nav div {
   flex-grow: 1;
@@ -96,14 +96,53 @@ svg:hover {
 }
 
 /* ANIMATIONS */
-@keyframes slide-in-top{0%{transform:translateY(-1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
-.slide-in-top{animation:slide-in-top 600ms cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0
+  }
 
-@keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
-.slide-in-bottom{animation:slide-in-bottom 600ms cubic-bezier(.25,.46,.45,.94) both}
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
 
-@keyframes rotate-in-center{0%{transform:rotate(-360deg);opacity:0}100%{transform:rotate(0);opacity:1}}
-.rotate-in-center{animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-top {
+  animation: slide-in-top 600ms cubic-bezier(.25, .46, .45, .94) both
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+.slide-in-bottom {
+  animation: slide-in-bottom 600ms cubic-bezier(.25, .46, .45, .94) both
+}
+
+@keyframes rotate-in-center {
+  0% {
+    transform: rotate(-360deg);
+    opacity: 0
+  }
+
+  100% {
+    transform: rotate(0);
+    opacity: 1
+  }
+}
+
+.rotate-in-center {
+  animation: rotate-in-center .6s cubic-bezier(.25, .46, .45, .94) both
+}
 
 /* LOGO */
 .logo {
@@ -120,11 +159,13 @@ svg:hover {
 }
 
 /* DISABLE FULL PAGE LOGO ON SMALL DEVICES*/
-@media only screen and (max-width: 768px), (max-height: 768px) {
+@media only screen and (max-width: 768px),
+(max-height: 768px) {
   .logo {
     height: auto;
     padding-bottom: 5rem;
   }
+
   .logo figure {
     padding-top: 5rem;
   }
@@ -151,13 +192,15 @@ svg:hover {
   z-index: 10;
   background-color: #5998D0;
 }
+
 .arrow svg {
   width: 1.25rem;
   fill: #FFFFFF;
   margin: 0.25rem;
 }
+
 .arrow svg:hover {
-  animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both;
+  animation: rotate-in-center .6s cubic-bezier(.25, .46, .45, .94) both;
 }
 
 /* MENU ICON */
@@ -170,13 +213,15 @@ svg:hover {
   right: 2rem;
   background-color: #5998D0;
 }
+
 .menu svg {
   width: 2rem;
   fill: #FFFFFF;
   margin: 0.25rem;
 }
+
 .menu svg:hover {
-  animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both;
+  animation: rotate-in-center .6s cubic-bezier(.25, .46, .45, .94) both;
 }
 
 /* 3.MAIN */
@@ -239,7 +284,8 @@ visit: https://www.benmarshall.me/responsive-iframes/
   padding-top: 4rem;
 }
 
-#bio article, .press {
+#bio article,
+.press {
   width: 50%;
   max-width: 1024px;
   margin: auto;
@@ -272,7 +318,7 @@ p.justify {
 }
 
 @media only screen and (max-width: 480px) {
-article p.justify {
+  article p.justify {
     text-align: justify;
     margin: 1rem;
   }
@@ -306,7 +352,7 @@ visit: https://www.benmarshall.me/responsive-iframes/
   padding-bottom: 2.5rem;
   padding-top: 0rem;
 }
-  
+
 .grid h3 {
   color: white;
   width: 100%;
@@ -318,7 +364,7 @@ visit: https://www.benmarshall.me/responsive-iframes/
   margin: 0 3rem 0 0rem;
 }
 
-.bandcamp div{
+.bandcamp div {
   overflow: hidden;
   padding-top: 100%;
   position: relative;
@@ -339,7 +385,7 @@ visit: https://www.benmarshall.me/responsive-iframes/
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .stream div {
@@ -349,7 +395,7 @@ visit: https://www.benmarshall.me/responsive-iframes/
 }
 
 .stream a {
-  width: 190px ;
+  width: 190px;
   color: #FFFFFF;
   padding: 1rem 1rem;
   margin: 0.5rem 0.5rem 0 0;
@@ -454,7 +500,7 @@ footer {
 }
 
 .pro a {
-  width: 170px ;
+  width: 170px;
   color: #FFFFFF;
   padding: 1rem 1rem;
   margin: 0.5rem 0.25rem 0 0.25rem;
@@ -497,10 +543,12 @@ footer {
 @media only screen and (min-width: 2000px) {
   html {
     font-size: 20px;
-  } 
+  }
+
   .stream {
     width: 700px;
   }
+
   .stream a {
     width: 220px;
   }
@@ -510,12 +558,19 @@ footer {
   .logo figure {
     width: 50%;
   }
-  .container, .video-button, #bio article, .press, .songkick {
+
+  .container,
+  .video-button,
+  #bio article,
+  .press,
+  .songkick {
     width: 55%;
   }
+
   .bandcamp {
     width: 350px;
   }
+
   .stream {
     width: 400px;
   }
@@ -524,78 +579,113 @@ footer {
 @media only screen and (max-width: 1024px) {
   html {
     font-size: 17px;
-  } 
+  }
+
   .logo figure {
     width: 55%;
   }
-  .container, .video-button, #bio article, .press, .songkick {
+
+  .container,
+  .video-button,
+  #bio article,
+  .press,
+  .songkick {
     width: 60%;
   }
 }
 
-@media only screen and (max-width: 900px) { 
+@media only screen and (max-width: 900px) {
   html {
     font-size: 16px;
   }
+
   .logo figure {
     width: 60%;
   }
-  .container, .video-button, #bio article, .press, .songkick {
+
+  .container,
+  .video-button,
+  #bio article,
+  .press,
+  .songkick {
     width: 70%;
   }
+
   .grid {
     flex-direction: column;
   }
+
   .bandcamp {
     margin: 0;
   }
+
   .stream {
     align-items: center;
   }
+
   .stream div {
     justify-content: center;
   }
+
   .stream a {
     margin: 0.5rem 0.25rem 0 0.25rem;
   }
 }
 
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 600px) {
   html {
     font-size: 15px;
   }
+
   header ul {
     display: none;
   }
+
   nav div a {
     margin: 0 1rem;
   }
+
   .logo figure {
     width: 65%;
   }
-  .container, .video-button, #bio article, .press, .songkick {
+
+  .container,
+  .video-button,
+  #bio article,
+  .press,
+  .songkick {
     width: 80%;
   }
 }
 
 /* MOBILE */
-@media only screen and (max-width: 480px) { 
-  .container, .video-button, #bio article, .press, .songkick {
+@media only screen and (max-width: 480px) {
+
+  .container,
+  .video-button,
+  #bio article,
+  .press,
+  .songkick {
     width: 90%;
   }
+
   .grid {
     width: 95%;
   }
+
   .bandcamp {
     width: 300px;
   }
+
   .stream {
     width: 300px;
   }
+
   .menu {
     top: 1rem;
     right: 1rem;
   }
+
   .pressname {
     text-align: end;
   }
@@ -606,9 +696,10 @@ secondary {
 }
 
 .histo {
-    color: #111628;
-    text-decoration: none;
+  color: #111628;
+  text-decoration: none;
 }
+
 .histo:hover {
-    color: #192332;
+  color: #192332;
 }

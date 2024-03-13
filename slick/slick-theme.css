@@ -55,7 +55,7 @@
 .slick-next:hover:before,
 .slick-next:focus:before
 {
-    opacity: 1;
+    opacity: .85;
 }
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
@@ -70,8 +70,8 @@
     font-size: 20px;
     line-height: 1;
 
-    opacity: .75;
-    color: black;
+    opacity: .4;
+    color: #111628;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
